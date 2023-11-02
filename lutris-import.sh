@@ -80,7 +80,15 @@ for service in $(echo $services | jq -cr '.[]'); do
     echo "$games" | jq -cr ".[] | select(.service == \"$service\")" | while read -r game; do
         game_name=$(echo $game | jq -r '.name')
         game_details=$(echo $game | jq -r '.details')
-        app_id=$(echo $game_details | jq -r '.id')
+        if [[ $service === "egs" ]]; then
+          app_id=$(echo $game_details | jq -r '.appName')
+        elif [[ $service === "ea_app" ]]; then
+          app_id=$(echo $game_details | jq -r '.contentId')
+        elif [[ $service === "ubisoft" ]]; then
+          app_id=$(echo $game_details | jq -r '.spaceId')
+        else
+          app_id=$(echo $game_details | jq -r '.id')
+        fi
         logit "Adding game $game_name to manifest file \"$service-manifest.json\"" grn
         echo "  {" >> ./$service/$service-manifest.json
         echo "    \"title\": \"$game_name\"," >> ./$service/$service-manifest.json
