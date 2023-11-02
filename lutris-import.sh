@@ -80,11 +80,11 @@ for service in $(echo $services | jq -cr '.[]'); do
     echo "$games" | jq -cr ".[] | select(.service == \"$service\")" | while read -r game; do
         game_name=$(echo $game | jq -r '.name')
         game_details=$(echo $game | jq -r '.details')
-        if [[ $service === "egs" ]]; then
+        if [[ $service == "egs" ]]; then
           app_id=$(echo $game_details | jq -r '.appName')
-        elif [[ $service === "ea_app" ]]; then
+        elif [[ $service == "ea_app" ]]; then
           app_id=$(echo $game_details | jq -r '.contentId')
-        elif [[ $service === "ubisoft" ]]; then
+        elif [[ $service == "ubisoft" ]]; then
           app_id=$(echo $game_details | jq -r '.spaceId')
         else
           app_id=$(echo $game_details | jq -r '.id')
