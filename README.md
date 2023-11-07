@@ -22,7 +22,7 @@ Unfortuantely this doesn't work for all services currently, see the serivce comp
 
 Clone the repo using:
 
-`git clone git@github.com:JavanCook/lutris-importer.git`
+`git clone git@github.com:culain-45124/lutris-importer.git`
 
 Create a new bin directory if you don't already have one:
 
@@ -42,7 +42,7 @@ Restart your terminal, or open a new tab for changes to take effect
 
 Register all the services you want to on Lutris, you need a version >0.5.14 for this to work
 
-Change directory to location you want to create the folders, for example
+Change directory to the location you want to create the folders, for example
 
 `cd /run/media/mmcblk0p1/Emulation`
 

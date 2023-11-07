@@ -13,11 +13,11 @@ end=$'\e[0m'
 
 function logit () {
   message=$1
-  flair=$2
+  flair=${2-}
   if test -z "${flair}"; then
     printf "%s\n" " -- ${message}"
   else
-    printf "%s\n" "${!flair} -- ${message}${end}"
+    printf "%s\n" "${!flair-} -- ${message}${end}"
   fi
 }
 
