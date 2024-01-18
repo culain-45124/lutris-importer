@@ -6,17 +6,7 @@ Run the command to create a folder in the current working directory for each "se
 
 These `.json` files can then be parsed by Steam Rom Manager to import them in to Steam with the correct artwork.
 
-The manifest files make use of the [Lutris CLI protocol link](https://github.com/lutris/lutris#command-line-options) functionality, using `lutris:` followed by the service and a game identifier, which will open a game via Lutris if it is installed, or install it if not.
-
-Unfortuantely this doesn't work for all services currently, see the serivce compatibility table below. Hoping to get a PR in to Lutris to make this work universally.
-
-| Service | Working |
-| --------- | ----------- |
-| egs      | :heavy_check_mark: |
-| ea_play      | :heavy_check_mark: |
-| gog      | :heavy_check_mark: |
-| amazon      | :heavy_check_mark: |
-| ubisoft      | Partial Compatibility |
+The manifest files make use of the [Lutris CLI protocol link](https://github.com/lutris/lutris#command-line-options) functionality, using `lutris:` followed by the service and a game identifier, which will open a game via Lutris if it is installed, or install it if not. Games will have to be uninstalled via Lutris directly.
 
 ## Installation
 
